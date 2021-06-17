@@ -1,0 +1,155 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="logobox mr-sm">
+        <img src="./logo.svg" />
+    </div>
+    <a href="#!"><span class="header-nav mr-xs">Summary</span></a>
+    <a href="#!"><span class="header-nav mr-xs active">Customers</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Orders</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Products</span></a>
+    <a class="flex-pull-right" href="#!"><span class="header-nav"><ion-icon name="storefront-outline"></ion-icon> Back to Store</span></a>
+</header>    
+
+<div id="left-sidebar" class="pad-sm">
+    <label class="mb-xxs">ID</label>
+    <input class="mb-sm w-100" type="number" placeholder="ID..." />
+
+    <label class="mb-xxs">Customer Name</label>
+    <input class="mb-sm w-100" placeholder="Customer Name..." />
+
+    <label class="mb-xxs">Joined Date</label>
+    <input class="mb-sm w-100" type="date" placeholder="Joined Date..." />
+
+    <hr class="mb-xs" />
+
+    <label class="mb-xxs">City</label>
+    <input class="mb-sm w-100" placeholder="City..." />
+
+    <label class="mb-xxs">State</label>
+    <input class="mb-sm w-100" placeholder="State..." />
+
+    <label class="mb-xxs">Zip Code</label>
+    <input class="mb-sm w-100" placeholder="Zip Code..." />
+
+    <label class="mb-xxs">Address</label>
+    <input class="mb-sm w-100" placeholder="Address..." />
+
+    <hr class="mb-xs" />
+
+    <label class="mb-xxs">Order ID</label>
+    <input class="mb-sm w-100" type="number" placeholder="Order ID..." />
+
+    <label class="mb-xxs">Last Purchase</label>
+    <input class="mb-sm w-100" type="date" placeholder="Last Purchase..." />
+</div>
+<div id="left-sidebar-bg"></div>
+
+<content class="sidebar pad-xl">
+    <div class="container">
+        <div class="flex-middle mb-md">
+            <button id="menu-filters" class="blank mr-xs hidden-desktop"><ion-icon name="menu"></ion-icon></button> 
+            <h2>Customers</h2>
+        </div>
+        
+        <div class="card overflow-x shadow mb-md">
+            <table class="grid iso">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Address 1</th>
+                        <th>Address 2</th>
+                        <th>Zip Code</th>
+                        <th>Joined Date</th>
+                        <th>Last Purchase</th>
+                        <th>Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</th>
+                        <td>Jane Doe</td>
+                        <td>jdoe@email.com</td>
+                        <td>Buffalo</td>
+                        <td>New York</td>
+                        <td>55 A Street Name</td>
+                        <td></td>
+                        <td>43212</td>
+                        <td>2020/01/01</td>
+                        <td>2020/01/21</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                    <tr>
+                        <td>12345</th>
+                        <td>Jane Doe</td>
+                        <td>jdoe@email.com</td>
+                        <td>Buffalo</td>
+                        <td>New York</td>
+                        <td>55 A Street Name</td>
+                        <td></td>
+                        <td>43212</td>
+                        <td>2020/01/01</td>
+                        <td>2020/01/21</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="center mb-md">
+            <button><ion-icon name="arrow-back-outline"></ion-icon> Previous</button> <button>1</button> <button class="blank disabled">2</button> <button>3</button> ... <button>299</button> <button>Next <ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </div>
+    </div>
+</content>
+
+<script>
+var filterMenu = document.querySelector('#menu-filters');
+var filterSidebar = document.querySelector('#left-sidebar');
+var filterSidebarBG = document.querySelector('#left-sidebar-bg');
+filterMenu.addEventListener('click', function(event) {
+    filterSidebar.classList.add("active");
+    filterSidebarBG.classList.add("active");
+});
+filterSidebarBG.addEventListener('click', function(event) {
+    filterSidebar.classList.remove("active");
+    filterSidebarBG.classList.remove("active");
+});
+
+var dropdownBtn = document.querySelectorAll('.dropdown > button');
+for (let i = 0; i < dropdownBtn.length; i++) {
+    dropdownBtn[i].addEventListener('click', function(event) {
+        parent = event.target.closest(".dropdown");
+        menu = parent.querySelector('.menu');
+        menu.classList.add("active");
+    });
+}
+document.addEventListener('click', function(event) {
+    var activeMenus = document.querySelectorAll('.menu.active');
+    parentDropdown = event.target.closest(".dropdown");
+    if (!parentDropdown) {
+        for (var i = 0; i < activeMenus.length; i++) {
+            activeMenus[i].classList.remove('active');
+        };
+    } 
+});
+</script>
+
+</body>
+</html>

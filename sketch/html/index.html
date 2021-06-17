@@ -1,0 +1,407 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<div id="sidebar-cart" class="shadow-lg pad-sm">
+    <h3 class="mb-sm">Your Cart Items:</h3>
+
+    <div class="flex">
+        <div class="center mr-xs">
+            <img style="max-width:56px;" src="https://m.media-amazon.com/images/I/41JKrbjTZgL._AC_UY218_.jpg">
+        </div>
+        <div class="flex-grow">
+            <p class="sm mb-xxs">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+            <div class="dropdown">
+                <button class="default sm mr-xs">Qty: 1 <ion-icon name="chevron-down-outline"></ion-icon></button>
+                <div class="menu">
+                    <ul>
+                        <li class="link"><a href="#!">1</a></li>
+                        <li class="link"><a href="#!">2</a></li>
+                        <li class="link"><a href="#!">3</a></li>
+                        <li class="link"><a href="#!">4</a></li>
+                        <li class="link"><a href="#!">5</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#!"><span class="sm muted"><ion-icon name="close-circle-outline"></ion-icon> Remove</span></a>
+        </div>
+    </div>
+    <hr class="mb-sm pt-sm" />
+
+    <button class="primary w-100">Checkout</button>
+</div>
+<div id="sidebar-cart-bg"></div>
+
+<header class="flex-middle pad-sm">
+    <div class="col-2">
+        <div class="logobox">
+            <img src="./logo.svg" />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-end">
+            <input id="searchbox" placeholder="Search" />
+            <button class="primary"><ion-icon class="dark" name="search"></ion-icon></button>
+        </div>
+        <div id="search-overlay" class="shadow-lg pad-xs">
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg">
+                    <p class="dark">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/61kJzrs92JL._AC_UL320_.jpg">
+                    <p class="dark">CUISINART SM-50BCC Precision Master 5.5 Qt (5.2L) Stand Mixer, Silver</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/71ggC94A5rL._AC_UL320_.jpg">
+                    <p class="dark">Stand Mixer, Elegant Life 6 Speeds 660W Tilt-Head Food Mixer, Removable 5.5 L Stainless Steel Mixing Bowl, Kitchen Electric Mixer Includes Beater, Dough Hook, Whisk and Bowl Cover, Blue and Silver</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/61aT8jl8THL._AC_UL320_.jpg">
+                    <p class="dark">Aucma Stand Mixer, 6.5-QT 660W 6-Speed Tilt-Head Food Mixer, Kitchen Electric Mixer with Dough Hook, Wire Whip &Beater (Blue) </p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/81Xc4o2yqGL._AC_UL320_.jpg">
+                    <p class="dark">Hamilton Beach 63325 6-Speed Stand Mixer</p>
+                </div>
+            </a>
+            <a class="" href="#!">
+                <div class="list-result center pad-xs center dark">
+                    <strong>View 22 More Results <ion-icon name="arrow-forward-outline"></ion-icon></strong>
+                </div>
+            </a>
+        </div>
+        <div id="search-overlay-bg" class=""></div>
+    </div>
+    <div class="col-4 sm-center right">
+        <div class="dropdown">
+            <button class="hidden-tablet header-nav mr-xs"><ion-icon class="mr-xxs" name="person-outline"></ion-icon> Account <ion-icon name="chevron-down-outline"></ion-icon></button>
+            <div class="menu left">
+                <ul>
+                    <li class="link"><a href="#!"><ion-icon class="mr-xxs" name="person-outline"></ion-icon> My Account</a></li>
+                    <li class="link"><a href="#!"><ion-icon class="mr-xxs" name="receipt-outline"></ion-icon> Orders</a></li>
+                    <li class="link"><a href="#!"><ion-icon class="mr-xxs" name="log-out-outline"></ion-icon> Logout</a></li>
+                </ul>
+            </div>
+        </div>        
+
+        <a id="cart-btn" href="#!"><span class="header-nav"><ion-icon name="cart-outline"></ion-icon> Cart</span></a>
+    </div>
+</header>
+<div id="subheader" class="pad-xs">
+    <a href="#!"><span id="menu-filters" class="hidden-desktop sub-nav strong sm"><ion-icon name="menu"></ion-icon> Menu</span></a>
+    <a href="#!"><span class="sub-nav strong sm active">Best Sellers</span></a>
+    <a href="#!"><span class="sub-nav strong sm">New Arrivals</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Home</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Kitchen</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Books</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Health & Beauty</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Grocery</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Pet Supplies</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Sports & Outdoors</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Automotive & Industrial</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Clothing, Shoes, & Jewellry</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Handmade</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Video Games</span></a>
+</div>
+
+
+<div id="left-sidebar" class="header pad-sm">
+    <label class="mb-xxs">Brand</label>
+    <div class="input-start blank mb-xs w-100">
+        <span><ion-icon name="search"></ion-icon></span><input placeholder="Brand..." />
+    </div> 
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand1" name="checkboxes-card">
+        <label for="brand1">Brand Result 1</label>    
+    </div>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand2" name="checkboxes-card">
+        <label for="brand2">Brand Result 2</label>    
+    </div>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand3" name="checkboxes-card">
+        <label for="brand3">Brand Result 3</label>    
+    </div>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand4" name="checkboxes-card">
+        <label for="brand4">Brand Result 4</label>    
+    </div>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand5" name="checkboxes-card">
+        <label for="brand5">Brand Result 5</label>    
+    </div>
+    <a class="mb-sm" href="#!"><p class="mb-sm sm">More Brands <ion-icon name="chevron-down"></ion-icon></p></a>
+
+
+    <label class="mb-xxs">Price Range</label>
+    <div class="radio mb-xxs">
+        <input type="radio" id="price-all" name="radios">
+        <label for="price-all">All</label>    
+    </div>
+    <div class="radio mb-xxs">
+        <input type="radio" id="price-25" name="radios">
+        <label for="price-25">Under $25</label>    
+    </div>
+    <div class="radio mb-xxs">
+        <input type="radio" id="price-50" name="radios">
+        <label for="price-50">$25 - $50</label>    
+    </div>
+    <div class="radio mb-xs">
+        <input type="radio" id="price-100" name="radios">
+        <label for="price-100">$50 - $100</label>    
+    </div>
+    <div class="radio mb-xs">
+        <input type="radio" id="price-200" name="radios">
+        <label for="price-200">$100 - $200</label>    
+    </div>
+    <div class="radio mb-xs">
+        <input type="radio" id="price-200" name="radios">
+        <label for="price-200">$200 & Above</label>    
+    </div>
+
+    <div class="input-start blank mb-xs w-100">
+        <span>$</span><input placeholder="From..." />
+    </div> 
+    <div class="input-start blank mb-sm w-100">
+        <span>$</span><input placeholder="To..." />
+    </div> 
+
+    <label class="mb-xxs">Shipping</label>
+    <div class="checkbox mb-sm">
+        <input type="checkbox" id="shipping" name="shipping">
+        <label for="shipping">FREE Shipping</label>    
+    </div>
+
+    <label class="mb-xxs">Sale</label>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="sale" name="sale">
+        <label for="sale">On Sale</label>    
+    </div>
+    <div class="checkbox mb-sm">
+        <input type="checkbox" id="clearance" name="clearance">
+        <label class="red" for="clearance">Final Clearance</label>    
+    </div>
+
+    <label class="mb-xxs">Availability</label>
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="stock" name="stock">
+        <label for="stock">Show Out of Stock</label>    
+    </div>
+
+</div>
+<div id="left-sidebar-bg"></div>
+
+<content class="header sidebar pad-xl">
+    <div class="container">
+        <h2>Best Sellers</h2>
+        <p class="mb-md muted">Best sellers from around the web.</p>
+        <div class="card shadow mb-md">
+            <div class="flex flex-wrap">
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg">
+                    <p class="max-description mb-xxs">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+                    <h2 class="mb-xxs">$549<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">1,100</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/61kJzrs92JL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">CUISINART SM-50BCC Precision Master 5.5 Qt (5.2L) Stand Mixer, Silver</p>
+                    <h2 class="mb-xxs">$349<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">428</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/71ggC94A5rL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">Stand Mixer, Elegant Life 6 Speeds 660W Tilt-Head Food Mixer, Removable 5.5 L Stainless Steel Mixing Bowl, Kitchen Electric Mixer Includes Beater, Dough Hook, Whisk and Bowl Cover, Blue and Silver</p>
+                    <h2 class="mb-xxs">$139<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">220</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/61aT8jl8THL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">Aucma Stand Mixer, 6.5-QT 660W 6-Speed Tilt-Head Food Mixer, Kitchen Electric Mixer with Dough Hook, Wire Whip &Beater (Blue)</p>
+                    <h2 class="mb-xxs">$172<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">180</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/81Xc4o2yqGL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">Hamilton Beach 63325 6-Speed Stand Mixer</p>
+                    <h2 class="mb-xxs">$169<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">1,100</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/61ONOjkvMmL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">CUISINART SM-50RC Precision Master 5.5 Qt (5.2L) Stand Mixer, Red</p>
+                    <h2 class="mb-xxs">$452<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">428</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/617ZRPO4VZL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">Stand Mixer, Cusimax 5-Quart Dough Mixer, Tilt-Head Electric Mixer with Stainless Steel Bowl, Dough Hook, Mixing Beater and Whisk, CMKM-150, Black</p>
+                    <h2 class="mb-xxs">$129<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">220</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/61aT8jl8THL._AC_UL320_.jpg">
+                    <p class="max-description mb-xxs">KitchenAid Artisan Design Series 5-Quart Tilt-Head Stand Mixer with Glass Bowl, Azure</p>
+                    <h2 class="mb-xxs">$499<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">180</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/41JKrbjTZgL._AC_UY218_.jpg">
+                    <p class="max-description mb-xxs">THRITOP Stand Mixer Food Mixers, with 5QT Mixing Bowl for Bread and Dough, Electric Mixer with Dough Hook, Whisk, Cookies Paddles and Spatula – 6 Speed Settings, 600 W New Concept Food Mixer(Elegant Grey)</p>
+                    <h2 class="mb-xxs">$179<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">1,100</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/71dmhbsa7fL._AC_UY218_.jpg">
+                    <p class="max-description mb-xxs">Delish by Dash Compact Stand Mixer 3.5 Quart with Beaters & Dough Hooks Included - Aqua, Blue (DCSM350GBBU02)</p>
+                    <h2 class="mb-xxs">$299<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">428</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/81poj2KljLL._AC_UY218_.jpg">
+                    <p class="max-description mb-xxs">VIVOHOME Electric 650W 6-Speed Tilt-Head Stand Mixer with 6 Quart Stainless Bowl Red ETL Listed</p>
+                    <h2 class="mb-xxs">$149<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">220</span>
+                </div>
+                <div class="flex-col pad-md border">
+                    <img class="mb-xs" style="max-height:124px; max-width: 100%;" src="https://m.media-amazon.com/images/I/61vTkhTnPSL._AC_UY218_.jpg">
+                    <p class="max-description mb-xxs">COOKLEE Stand Mixer, 9.5 Qt. 660W 10-Speed Electric Kitchen Mixer with Dishwasher-Safe Dough Hooks, Flat Beaters, Wire Whip & Pouring Shield Attachments for Most Home Cooks, SM-1551, Nero Nemesis Black</p>
+                    <h2 class="mb-xxs">$219<span class="sm">.99</span></h2>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="orange" name="star"></ion-icon>
+                    <ion-icon class="muted" name="star-outline"></ion-icon> <span class="muted">180</span>
+                </div>
+            </div>
+        </div>
+        <div class="center mb-md">
+            <button><ion-icon name="arrow-back-outline"></ion-icon> Previous</button> <button>1</button> <button class="blank disabled">2</button> <button>3</button> ... <button>299</button> <button>Next <ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </div>
+    </div>
+</content>
+
+<script>
+var searchBox = document.querySelector('#searchbox');
+var searchResults = document.querySelector('#search-overlay');
+var searchResultsBG = document.querySelector('#search-overlay-bg');
+searchBox.addEventListener('input', function(event) {
+    searchResults.classList.add("active");
+    searchResultsBG.classList.add("active");
+});
+searchResultsBG.addEventListener('click', function(event) {
+    searchResults.classList.remove("active");
+    searchResultsBG.classList.remove("active");
+});
+
+var filterMenu = document.querySelector('#menu-filters');
+var filterSidebar = document.querySelector('#left-sidebar');
+var filterSidebarBG = document.querySelector('#left-sidebar-bg');
+filterMenu.addEventListener('click', function(event) {
+    filterSidebar.classList.add("active");
+    filterSidebarBG.classList.add("active");
+});
+filterSidebarBG.addEventListener('click', function(event) {
+    filterSidebar.classList.remove("active");
+    filterSidebarBG.classList.remove("active");
+});
+
+var cartBtn = document.querySelector('#cart-btn');
+var cartSidebar = document.querySelector('#sidebar-cart');
+var cartBg = document.querySelector('#sidebar-cart-bg');
+cartBtn.addEventListener('click', function(event) {
+    cartSidebar.classList.add("active");
+    cartBg.classList.add("active");
+});
+cartBg.addEventListener('click', function(event) {
+    cartSidebar.classList.remove("active");
+    cartBg.classList.remove("active");
+});
+
+var dropdownBtn = document.querySelectorAll('.dropdown > button');
+for (let i = 0; i < dropdownBtn.length; i++) {
+    dropdownBtn[i].addEventListener('click', function(event) {
+        parent = event.target.closest(".dropdown");
+        menu = parent.querySelector('.menu');
+        menu.classList.add("active");
+    });
+}
+document.addEventListener('click', function(event) {
+    var activeMenus = document.querySelectorAll('.menu.active');
+    parentDropdown = event.target.closest(".dropdown");
+    if (!parentDropdown) {
+        for (var i = 0; i < activeMenus.length; i++) {
+            activeMenus[i].classList.remove('active');
+        };
+    } 
+});
+</script>
+
+</body>
+</html>

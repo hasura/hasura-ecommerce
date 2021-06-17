@@ -1,0 +1,20 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["**/metadata.json"],
+      "url": "./.vscode/schemas/MetadataExport.schema.json"
+    }
+  ],
+  "yaml.schemas": {
+    "./.vscode/schemas/ActionsYAML.schema.json": "**/actions.yaml",
+    "./.vscode/schemas/AllowListYAML.schema.json": "**/allow_list.yaml",
+    "./.vscode/schemas/CronTriggerYAML.schema.json": "**/cron_triggers.yaml",
+    "./.vscode/schemas/FunctionsYAML.schema.json": "**/functions.yaml",
+    "./.vscode/schemas/QueryCollectionsYAML.schema.json": "**/query_collections.yaml",
+    "./.vscode/schemas/RemoteSchemasYAML.schema.json": "**/remote_schemas.yaml",
+    "./.vscode/schemas/TablesYAML.schema.json": "**/tables.yaml",
+    "./.vscode/schemas/SingleTableYAML.schema.json": "**/table.yaml"
+  },
+  "pgFormatter.commaBreak": true,
+  "pgFormatter.wrapLimit": 80
+}

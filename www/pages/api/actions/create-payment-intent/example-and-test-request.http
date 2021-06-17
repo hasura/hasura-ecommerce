@@ -1,0 +1,26 @@
+POST http://localhost:8060/v1/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+X-Hasura-Admin-Secret: my-secret
+
+# Call the Hasura Action which maps to Next.js /api/actions/admin-signup
+mutation {
+  createPaymentIntent(params: {
+    paymentAmount: 12500,
+  }) {
+    clientSecret
+  }
+}
+
+###
+
+POST http://localhost:3000/api/actions/create-payment-intent HTTP/1.1
+Content-Type: application/json
+
+{
+    "input": {
+        "params": {
+            "paymentAmount": 12500
+        }
+    }
+}

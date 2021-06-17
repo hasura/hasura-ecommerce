@@ -1,0 +1,149 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="logobox mr-sm">
+        <img src="./logo.svg" />
+    </div>
+    <a href="#!"><span class="header-nav mr-xs">Summary</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Customers</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Orders</span></a>
+    <a href="#!"><span class="header-nav mr-xs active">Products</span></a>
+    <a class="flex-pull-right" href="#!"><span class="header-nav"><ion-icon name="storefront-outline"></ion-icon> Back to Store</span></a>
+</header>    
+
+<div id="left-sidebar" class="pad-sm">
+    <label class="mb-xxs">ID</label>
+    <input class="mb-sm w-100" type="number" placeholder="ID..." />
+
+    <label class="mb-xxs">Product Name</label>
+    <input class="mb-sm w-100" placeholder="Product Name..." />
+
+    <label class="mb-xxs">Product Description</label>
+    <input class="mb-sm w-100" placeholder="Product Description..." />
+
+    <hr class="mb-xs" />
+
+    <label class="mb-xxs">Price Range</label>
+    <div class="input-start blank mb-xs w-100">
+        <span>$</span><input type="number" placeholder="From..." />
+    </div> 
+    <div class="input-start blank mb-xs w-100">
+        <span>$</span><input type="number" placeholder="To..." />
+    </div> 
+
+    <div class="checkbox mb-xxs">
+        <input type="checkbox" id="brand1" name="checkboxes-card">
+        <label for="brand1">On Sale</label>    
+    </div>
+</div>
+<div id="left-sidebar-bg"></div>
+
+
+<content class="sidebar pad-xl">
+    <div class="container">
+        <div class="flex-middle mb-md">
+            <button id="menu-filters" class="blank mr-xs hidden-desktop"><ion-icon name="menu"></ion-icon></button> 
+            <h2>Products</h2>
+
+            <button class="primary flex-pull-right"><ion-icon name="add-circle-outline"></ion-icon> Add Product</button>
+        </div>
+
+        <div class="card overflow-x shadow mb-md">
+            <table class="grid iso">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th class="right">Price</th>
+                        <th class="right">Sale Price</th>
+                        <th class="right">Save</th>
+                        <th>Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</th>
+                        <td><img style="width:80px;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg" /></td>
+                        <td>
+                            <p class="strong">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+                            <li>Multipurpose attachment hub, over 15 optional attachments</li>
+                            <li> 5-Qt.(2, 37 L) Glass Bowl with Measurement Markings</li>
+                            ...
+                        </td>
+                        <td class="right">$549.99</td>
+                        <td class="right">$629.99</td>
+                        <td class="right">$120.00</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                    <tr>
+                        <td>12345</th>
+                        <td><img style="width:80px;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg" /></th>
+                        <td>
+                            <p class="strong">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+                            <li>Multipurpose attachment hub, over 15 optional attachments</li>
+                            <li> 5-Qt.(2, 37 L) Glass Bowl with Measurement Markings</li>
+                            ...
+                        </td>
+                        <td class="right">$549.99</td>
+                        <td class="right">-</td>
+                        <td class="right">-</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="center mb-md">
+            <button><ion-icon name="arrow-back-outline"></ion-icon> Previous</button> <button>1</button> <button class="blank disabled">2</button> <button>3</button> ... <button>299</button> <button>Next <ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </div>
+    </div>
+</content>
+
+<script>
+var filterMenu = document.querySelector('#menu-filters');
+var filterSidebar = document.querySelector('#left-sidebar');
+var filterSidebarBG = document.querySelector('#left-sidebar-bg');
+filterMenu.addEventListener('click', function(event) {
+    filterSidebar.classList.add("active");
+    filterSidebarBG.classList.add("active");
+});
+filterSidebarBG.addEventListener('click', function(event) {
+    filterSidebar.classList.remove("active");
+    filterSidebarBG.classList.remove("active");
+});
+
+var dropdownBtn = document.querySelectorAll('.dropdown > button');
+for (let i = 0; i < dropdownBtn.length; i++) {
+    dropdownBtn[i].addEventListener('click', function(event) {
+        parent = event.target.closest(".dropdown");
+        menu = parent.querySelector('.menu');
+        menu.classList.add("active");
+    });
+}
+document.addEventListener('click', function(event) {
+    var activeMenus = document.querySelectorAll('.menu.active');
+    parentDropdown = event.target.closest(".dropdown");
+    if (!parentDropdown) {
+        for (var i = 0; i < activeMenus.length; i++) {
+            activeMenus[i].classList.remove('active');
+        };
+    } 
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+.form {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  padding: 4px 8px;
+  border-bottom-width: 2px;
+  position: relative;
+}
+
+.label {
+  width: 100%;
+}
+
+.select {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  appearance: none;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.select dt {
+  padding: 8px 16px;
+}
+
+.select dt:hover {
+  background-color: #9ca3af;
+}
+
+input.select,
+select.select,
+select.select:hover,
+select.select:focus,
+input.select:hover,
+input.select:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.form:hover {
+  border: 1px solid #9ca3af;
+  margin-bottom: 1px;
+}

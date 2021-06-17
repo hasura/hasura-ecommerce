@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="logobox mr-sm">
+        <img src="./logo.svg" />
+    </div>
+    <a href="#!"><span class="header-nav mr-xs">Summary</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Customers</span></a>
+    <a href="#!"><span class="header-nav mr-xs">Orders</span></a>
+    <a href="#!"><span class="header-nav mr-xs active">Products</span></a>
+    <a class="flex-pull-right" href="#!"><span class="header-nav"><ion-icon name="storefront-outline"></ion-icon> Back to Store</span></a>
+</header>    
+
+<content class="pad-xl">
+    <div class="container small">
+        <h2 class="mb-sm">Add Product</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="card pad-sm mb-sm shadow">
+
+                    <div class="row mb-xxs">
+                        <div class="col-4 pr-xs">
+                            <p class="strong mb-xxs">Product Image</p>
+                            <form action="/file-upload"
+                            class="dropzone"
+                            id="dropzone-area"></form>
+                        </div>
+                        <div class="col-8 pl-xs">
+                            <p class="strong mb-xxs">Product Name</p>
+                            <input class="w-100 mb-xs" placeholder="Name..."/>
+
+                            <p class="strong mb-xxs">Description</p>
+                            <textarea class="w-100 mb-xs" rows="8" placeholder="Description..."/></textarea>    
+
+                            <div class="row mb-sm">
+                                <div class="col-6 pr-xs">
+                                    <p class="strong mb-xxs">Price</p>
+                                    <div class="input-start blank">
+                                        <span>$</span>
+                                        <input type="number" type="number" placeholder="Price..." />
+                                    </div> 
+                                </div>
+                                <div class="col-6 pl-xs">
+                                    <p class="strong mb-xxs">Sale Price</p>
+                                    <div class="input-start blank">
+                                        <span>$</span>
+                                        <input type="number" type="number" placeholder="Sale Price..." />
+                                    </div> 
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <button class="default mr-xs">Save Product</button>
+                        <button class="primary">Save Product</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</content>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" integrity="sha512-3g+prZHHfmnvE1HBLwUnVuunaPOob7dpksI7/v6UnF/rnKGwHf/GdEq9K7iEN7qTtW+S0iivTcGpeTBqqB04wA==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js" integrity="sha512-9WciDs0XP20sojTJ9E7mChDXy6pcO0qHpwbEJID1YVavz2H6QBz5eLoDD8lseZOb2yGT8xDNIV7HIe1ZbuiDWg==" crossorigin="anonymous"></script>
+<style>
+.dropzone{
+    border-radius:4px;
+    border: 1px dashed #d1d5db;
+}
+</style>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "type": "run_sql",
+  "args": {
+    "sql": "TRUNCATE hdb_catalog.schema_migrations;",
+    "cascade": true,
+    "check_metadata_consistency": false
+  }
+}

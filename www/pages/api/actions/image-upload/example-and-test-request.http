@@ -1,0 +1,14 @@
+POST http://localhost:3000/api/actions/image-upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="image"
+
+image
+--WebAppBoundary
+Content-Disposition: form-data; name="image"; filename="stock-laptop-image.jpg"
+Content-Type: image/jpeg
+
+# Read in data of "stock-laptop-image.jpg" from this directory to send as the upload
+< ./stock-laptop-image.jpg
+--WebAppBoundary--

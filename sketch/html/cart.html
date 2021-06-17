@@ -1,0 +1,162 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="col-2">
+        <div class="logobox">
+            <img src="./logo.svg" />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-end">
+            <input id="searchbox" placeholder="Search" />
+            <button class="primary"><ion-icon class="dark" name="search"></ion-icon></button>
+        </div>
+        <div id="search-overlay" class="shadow-lg pad-xs">
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg">
+                    <p class="dark">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/61kJzrs92JL._AC_UL320_.jpg">
+                    <p class="dark">CUISINART SM-50BCC Precision Master 5.5 Qt (5.2L) Stand Mixer, Silver</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/71ggC94A5rL._AC_UL320_.jpg">
+                    <p class="dark">Stand Mixer, Elegant Life 6 Speeds 660W Tilt-Head Food Mixer, Removable 5.5 L Stainless Steel Mixing Bowl, Kitchen Electric Mixer Includes Beater, Dough Hook, Whisk and Bowl Cover, Blue and Silver</p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/61aT8jl8THL._AC_UL320_.jpg">
+                    <p class="dark">Aucma Stand Mixer, 6.5-QT 660W 6-Speed Tilt-Head Food Mixer, Kitchen Electric Mixer with Dough Hook, Wire Whip &Beater (Blue) </p>
+                </div>
+            </a>
+            <a color="dark" href="#!">
+                <div class="list-result flex-middle pad-xs">
+                    <img class="mr-sm" style="max-width:56px;" src="https://m.media-amazon.com/images/I/81Xc4o2yqGL._AC_UL320_.jpg">
+                    <p class="dark">Hamilton Beach 63325 6-Speed Stand Mixer</p>
+                </div>
+            </a>
+            <a class="" href="#!">
+                <div class="list-result center pad-xs center dark">
+                    <strong>View 22 More Results <ion-icon name="arrow-forward-outline"></ion-icon></strong>
+                </div>
+            </a>
+        </div>
+        <div id="search-overlay-bg" class=""></div>
+    </div>
+    <div class="col-4 sm-center right">
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="person-outline"></ion-icon> Account</span></a>
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="receipt-outline"></ion-icon> Orders</span></a>
+        <a id="cart-btn" href="#!"><span class="header-nav"><ion-icon name="cart-outline"></ion-icon> Cart</span></a>
+    </div>
+</header>
+<div id="subheader" class="pad-xs">
+    <a href="#!"><span id="menu-filters" class="hidden-desktop sub-nav strong sm"><ion-icon name="menu"></ion-icon> Menu</span></a>
+    <a href="#!"><span class="sub-nav strong sm active">Best Sellers</span></a>
+    <a href="#!"><span class="sub-nav strong sm">New Arrivals</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Home</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Kitchen</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Books</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Health & Beauty</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Grocery</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Pet Supplies</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Sports & Outdoors</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Automotive & Industrial</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Clothing, Shoes, & Jewellry</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Handmade</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Video Games</span></a>
+</div>
+
+<content class="header pad-xl">
+    <div class="container">
+        <h2 class="mb-sm">My Cart</h2>
+        <div class="col-9 pr-sm">
+            <div class="card mb-md pad-sm shadow">
+                <table class="iso mobile-wrap">
+                    <tbody>
+                        <tr>
+                            <td style="width:1px;">
+                                <img style="width:80px;" src="https://images-na.ssl-images-amazon.com/images/I/81EYgXB%2BGOL._AC_SX679_.jpg" />
+                            </td>
+                            <td>
+                                <h3 class="mb-xs">KitchenAid KSM150PSER Artisan 5-Quart Stand Mixer, Empire Red</h3>
+                                <h3 class="mb-xs hidden-desktop">$549.99</h3>
+                                <button class="default mr-xxs sm"> <ion-icon name="add-circle-outline"></ion-icon> </button>
+                                <div class="dropdown">
+                                    <button class="default sm mr-xxs">Qty: 1 <ion-icon name="chevron-down-outline"></ion-icon></button>
+                                    <div class="menu">
+                                        <li class="link disabled">Quantity</li>
+                                        <a href="#!"><li class="link">1</li></a>
+                                        <a href="#!"><li class="link">2</li></a>
+                                        <a href="#!"><li class="link">3</li></a>
+                                        <a href="#!"><li class="link">4</li></a>
+                                        <a href="#!"><li class="link">5</li></a>
+                                    </div>
+                                </div>   
+                                <button class="default mr-sm sm"> <ion-icon name="remove-circle-outline"></ion-icon> </button>
+                                <button class="default red sm"> Remove </button>
+                            </td>
+                            <td class="right hidden-tablet">
+                                <h3 class="">$549.99</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="right">
+                                <h3 class="mb-xs"><span style="font-weight:400;">Subtotal:</span> $549.99</h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        </div>
+        <div class="pl-xs col-3">
+            <div class="card pad-sm shadow">
+                <h2 class="mb-xs"><span style="font-weight:400;">Subtotal:</span> $549.99</h2>
+                <button class="primary w-100"><ion-icon name="cart-outline"></ion-icon> Checkout</button>
+            </div>    
+        </div>
+    </div>
+</content>
+
+<script>
+var dropdownBtn = document.querySelectorAll('.dropdown > button');
+for (let i = 0; i < dropdownBtn.length; i++) {
+    dropdownBtn[i].addEventListener('click', function(event) {
+        parent = event.target.closest(".dropdown");
+        menu = parent.querySelector('.menu');
+        menu.classList.add("active");
+    });
+}
+document.addEventListener('click', function(event) {
+    var activeMenus = document.querySelectorAll('.menu.active');
+    parentDropdown = event.target.closest(".dropdown");
+    if (!parentDropdown) {
+        for (var i = 0; i < activeMenus.length; i++) {
+            activeMenus[i].classList.remove('active');
+        };
+    } 
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="384px" height="321px" viewBox="0 0 384 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>checkmark</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="checkmark" transform="translate(32.000000, 32.000000)" stroke="#FFFFFF" stroke-width="44">
+            <polyline id="Path" points="320 0 96 256 0 160"></polyline>
+        </g>
+    </g>
+</svg>

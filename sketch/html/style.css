@@ -1,0 +1,238 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #111b29;
+  color: #fff;
+  width: 100%;
+  height: 48px;
+  z-index: 100;
+}
+.logobox {
+  display: inline-block;
+}
+.logobox > img {
+  padding: 0 8px;
+  width: 115px;
+}
+a > .header-nav,
+.header-nav {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #eee;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+a > .header-nav:hover,
+.header-nav:hover {
+  color: #eee;
+  border: 1px solid #d1d5db;
+}
+a > .header-nav.active,
+.header-nav.active {
+  background: #43495a;
+}
+#subheader {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  height: 36px;
+  width: 100%;
+  background: #43495a;
+  overflow: hidden;
+}
+a > .sub-nav,
+.sub-nav {
+  display: inline-block;
+  padding: 0 8px;
+  color: #eee;
+}
+a > .sub-nav.active,
+.sub-nav.active {
+  color: #ffc627;
+  border-bottom: 3px solid #ffc627;
+  padding-bottom: 8px;
+}
+#searchbox:focus {
+  border: 2px solid #f28b31;
+}
+#search-overlay,
+#menu-overlay {
+  position: fixed;
+  width: inherit;
+  color: #374151;
+  margin-top: 4px;
+  border-radius: 4px;
+  background: #fff;
+  top: -5000px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 2;
+}
+
+#search-overlay.active,
+#menu-overlay.active {
+  top: inherit;
+  opacity: 1;
+}
+
+#search-overlay-bg,
+#sidebar-cart-bg,
+#left-sidebar-bg,
+#menu-overlay-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: -5000px;
+  opacity: 0;
+  background: #000;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1;
+}
+#search-overlay-bg.active,
+#sidebar-cart-bg.active,
+#left-sidebar-bg.active,
+#menu-overlay-bg.active {
+  top: 48px;
+  opacity: 0.2;
+}
+
+.list-result {
+  border-radius: 4px;
+}
+.list-result:hover {
+  background: #f5f3ff;
+}
+.list-result:last-child {
+  margin-bottom: 0;
+}
+
+#sidebar-cart {
+  position: fixed;
+  width: 256px;
+  height: calc(100% - 48px);
+  right: -256px;
+  top: 48px;
+  background: #fff;
+  transition: right 0.2s ease-in-out;
+  z-index: 2;
+}
+#sidebar-cart.active {
+  right: 0;
+}
+
+#left-sidebar {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  height: calc(100% - 48px);
+  width: 256px;
+  background: #fff;
+  border-right: 1px solid #d1d5db;
+  overflow-y: auto;
+  transition: all 0.2s ease-in-out;
+}
+#left-sidebar.header {
+  top: 84px;
+  height: calc(100% - 84px);
+}
+
+content {
+  position: fixed;
+  width: 100%;
+  top: 48px;
+  height: calc(100% - 48px);
+  overflow-y: auto;
+  transition: all 0.2s ease-in-out;
+}
+content.header {
+  top: 84px;
+  height: calc(100% - 84px);
+}
+content.sidebar {
+  left: 256px;
+  width: calc(100% - 256px);
+}
+content.white-bg {
+  background: #fff;
+}
+content > .container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+content > .container.small {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-col.border {
+  flex-basis: 25%;
+  border-right: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
+}
+.flex-col.border:last-child {
+  border-right: 0;
+}
+/* .flex:last-child > .flex-col.border {
+    border-bottom: 0;
+} */
+
+.orange {
+  color: #f28b31;
+}
+
+.max-description {
+  height: 64px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: 3;
+  -moz-line-clamp: 5;
+  -ms-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .sm-center {
+    text-align: center;
+  }
+  .pad-xl {
+    padding: 32px;
+  }
+  #left-sidebar.header,
+  #left-sidebar {
+    left: -330px;
+    z-index: 2;
+  }
+  #left-sidebar.header.active,
+  #left-sidebar.active {
+    left: 0;
+  }
+  content.sidebar {
+    left: 0;
+    width: 100%;
+  }
+  #search-overlay,
+  #menu-overlay {
+    width: calc(100% - 32px);
+    left: 16px;
+    height: 342px;
+    overflow-y: auto;
+  }
+  #menu-overlay.active {
+    height: inherit;
+    top: 54px;
+  }
+
+  .flex-col.border {
+    flex-basis: 50%;
+  }
+}

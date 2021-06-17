@@ -1,0 +1,22 @@
+{
+  "name": "seed-data-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./src/main.ts",
+    "generate-gql-client": "zeus http://localhost:8060/v1/graphql  ./src --ts --node --header 'X-Hasura-Admin-Secret:my-secret' --output graphql-client-sdk-node"
+  },
+  "dependencies": {
+    "faker": "^5.4.0",
+    "graphql-zeus": "^2.8.6",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/faker": "^5.1.7",
+    "@types/node": "^14.14.31",
+    "@types/node-fetch": "^2.5.8",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  }
+}

@@ -1,0 +1,26 @@
+table:
+  name: site_admin
+  schema: public
+
+select_permissions:
+  - role: site-admin
+    permission:
+      columns: "*"
+      filter: {}
+
+insert_permissions:
+  - role: site-admin
+    permission:
+      columns: "*"
+      check: {}
+
+update_permissions:
+  - role: site-admin
+    permission:
+      columns: "*"
+      filter: {}
+
+delete_permissions:
+  - role: site-admin
+    permission:
+      filter: {}

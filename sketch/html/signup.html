@@ -1,0 +1,148 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="col-2">
+        <div class="logobox">
+            <img src="./logo.svg" />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-end">
+            <input id="searchbox" placeholder="Search" />
+            <button class="primary"><ion-icon class="dark" name="search"></ion-icon></button>
+        </div>
+    </div>
+    <div class="col-4 sm-center right">
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="person-outline"></ion-icon> Account</span></a>
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="receipt-outline"></ion-icon> Orders</span></a>
+        <a id="cart-btn" href="#!"><span class="header-nav"><ion-icon name="cart-outline"></ion-icon> Cart</span></a>
+    </div>
+</header>
+
+<div id="subheader" class="pad-xs">
+    <a href="#!"><span id="menu-filters" class="hidden-desktop sub-nav strong sm"><ion-icon name="menu"></ion-icon> Menu</span></a>
+    <a href="#!"><span class="sub-nav strong sm active">Best Sellers</span></a>
+    <a href="#!"><span class="sub-nav strong sm">New Arrivals</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Home</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Kitchen</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Books</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Health & Beauty</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Grocery</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Pet Supplies</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Sports & Outdoors</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Automotive & Industrial</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Clothing, Shoes, & Jewellry</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Handmade</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Video Games</span></a>
+</div>
+
+<content class="header pad-xl">
+    <div class="container small">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <h2 class="mb-sm">Sign-Up</h2>
+
+                <div class="card pad-sm mb-sm shadow">
+                    <p class="strong mb-xxs">Username</p>
+                    <input class="w-100 mb-xs" placeholder="Username..."/>
+
+                    <p class="strong mb-xxs">Email</p>
+                    <input class="w-100 mb-xs" placeholder="Username..."/>
+
+                    <p class="strong mb-xxs">Password</p>
+                    <input type="password" class="w-100 mb-xs" placeholder="Password..."/>
+
+                    <p class="strong mb-xxs">Repeat Password</p>
+                    <input type="password" class="w-100 mb-sm" placeholder="Repeat Password..."/>
+
+                    <hr class="mb-xs" />
+
+                    <p> Your password must contain at least:</p>
+                    <div class="mb-sm">
+                        <p>
+                            <ion-icon class="green" name="checkmark"></ion-icon>
+                            <ion-icon class="red" name="close"></ion-icon>
+                            1 Lowercase Character (a-z)
+                        </p>
+                        <p>
+                            <ion-icon class="green" name="checkmark"></ion-icon>
+                            <ion-icon class="red" name="close"></ion-icon>
+                            1 Uppercase Character (A-Z)
+                        </p>
+                        <p>
+                            <ion-icon class="green" name="checkmark"></ion-icon>
+                            <ion-icon class="red" name="close"></ion-icon>
+                            1 Number (0-9)
+                        </p>
+                        <p>
+                            <ion-icon class="green" name="checkmark"></ion-icon>
+                            <ion-icon class="red" name="close"></ion-icon>
+                            1 Special Character ($@#&!-)
+                        </p>
+                    </div>
+
+                    <button class="primary mb-xs w-100">Sign Up</button>
+                    <button class="default w-100">Go to Login <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>    
+            </div>
+        </div>
+    </div>
+</content>
+
+<script>
+    let username;
+    let email;
+    let password;
+    let passwordConfirm;
+
+    let checkpassLower;
+    let checkpassUpper;
+    let checkpassNumber;
+    let checkpassSpecial;
+    let passedCheck;
+
+    function passwordStrengthCheck() {
+        if (password.match(/[a-z]+/)){
+            checkpassLower = true;
+        } else {
+            checkpassLower = false;
+        }
+        if (password.match(/[A-Z]+/)){
+            checkpassUpper = true;
+        } else {
+            checkpassUpper = false;
+        }
+        if (password.match(/[0-9]+/)){
+            checkpassNumber = true;
+        } else {
+            checkpassNumber = false;
+        }
+        if (password.match(/[$@#&!-]+/)){
+            checkpassSpecial = true;
+        } else {
+            checkpassSpecial = false;
+        }
+        if ((checkpassLower === true) && (checkpassUpper === true) && (checkpassNumber === true) && (checkpassSpecial === true)){
+            passCheck = true;
+        }
+    }
+</script>
+
+</body>
+</html>

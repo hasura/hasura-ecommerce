@@ -1,0 +1,80 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="col-2">
+        <div class="logobox">
+            <img src="./logo.svg" />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-end">
+            <input id="searchbox" placeholder="Search" />
+            <button class="primary"><ion-icon class="dark" name="search"></ion-icon></button>
+        </div>
+    </div>
+    <div class="col-4 sm-center right">
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="person-outline"></ion-icon> Account</span></a>
+        <a href="#!"><span class="hidden-tablet header-nav mr-xs"><ion-icon name="receipt-outline"></ion-icon> Orders</span></a>
+        <a id="cart-btn" href="#!"><span class="header-nav"><ion-icon name="cart-outline"></ion-icon> Cart</span></a>
+    </div>
+</header>
+
+<div id="subheader" class="pad-xs">
+    <a href="#!"><span id="menu-filters" class="hidden-desktop sub-nav strong sm"><ion-icon name="menu"></ion-icon> Menu</span></a>
+    <a href="#!"><span class="sub-nav strong sm active">Best Sellers</span></a>
+    <a href="#!"><span class="sub-nav strong sm">New Arrivals</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Home</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Kitchen</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Books</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Health & Beauty</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Grocery</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Pet Supplies</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Sports & Outdoors</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Automotive & Industrial</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Clothing, Shoes, & Jewellry</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Handmade</span></a>
+    <a href="#!"><span class="sub-nav strong sm">Video Games</span></a>
+</div>
+
+<content class="header pad-xl">
+    <div class="container small">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <h2 class="mb-sm">Login</h2>
+
+                <div class="card pad-sm mb-sm shadow">
+                    <p class="strong mb-xxs">Username</p>
+                    <input class="w-100 mb-xs" placeholder="Username..."/>
+
+                    <p class="strong mb-xxs">Password</p>
+                    <input type="password" class="w-100 mb-sm" placeholder="Password..."/>
+
+                    <button class="primary mb-xs w-100">Login</button>
+                    <button class="default w-100">Go to Sign Up <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>    
+            </div>
+        </div>
+    </div>
+</content>
+
+<script>
+</script>
+
+</body>
+</html>

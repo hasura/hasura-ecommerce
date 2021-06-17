@@ -1,0 +1,27 @@
+POST http://localhost:8060/v1/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+# Call the Hasura Action which maps to Next.js /api/actions/login
+query {
+  login(params: {
+    email: "user@example.com",
+    password: "mypassword",
+  }) {
+    token
+  }
+}
+
+###
+
+POST http://localhost:3000/api/actions/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "input": {
+        "params": {
+            "email": "user@example.com",
+            "password": "mypassword"
+        }
+    }
+}

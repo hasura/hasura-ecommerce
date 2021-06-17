@@ -1,0 +1,267 @@
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+    <link rel='stylesheet' href='./core.css'>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+<header class="flex-middle pad-sm">
+    <div class="logobox mr-sm">
+        <img src="./logo.svg" />
+    </div>
+    <a id="menu-btn" href="#!"><span class="hidden-desktop header-nav mr-xs"><ion-icon name="menu-outline"></ion-icon> Menu</span></a>
+    <a href="#!"><span class="hidden-tablet header-nav mr-xs active">Summary</span></a>
+    <a href="#!"><span class="hidden-tablet header-nav mr-xs">Customers</span></a>
+    <a href="#!"><span class="hidden-tablet header-nav mr-xs">Orders</span></a>
+    <a href="#!"><span class="hidden-tablet header-nav mr-xs">Products</span></a>
+    <a href="#!"><span class="hidden-tablet header-nav mr-xs">Discounts</span></a>
+    <a class="flex-pull-right" href="#!"><span class="header-nav"><ion-icon name="storefront-outline"></ion-icon> Back to Store</span></a>
+</header>
+
+<div id="menu-overlay" class="shadow-lg pad-xs">
+    <a color="dark" href="#!">
+        <div class="list-result flex-middle pad-xs">
+            <p class="dark">Summary</p>
+        </div>
+    </a>
+    <a color="dark" href="#!">
+        <div class="list-result flex-middle pad-xs">
+            <p class="dark">Customers</p>
+        </div>
+    </a>
+    <a color="dark" href="#!">
+        <div class="list-result flex-middle pad-xs">
+            <p class="dark">Orders</p>
+        </div>
+    </a>
+    <a color="dark" href="#!">
+        <div class="list-result flex-middle pad-xs">
+            <p class="dark">Products</p>
+        </div>
+    </a>
+    <a color="dark" href="#!">
+        <div class="list-result flex-middle pad-xs">
+            <p class="dark">Discounts</p>
+        </div>
+    </a>
+</div>
+<div id="menu-overlay-bg" class=""></div>
+
+<content class="pad-xl">
+    <div class="container">
+        <div class="mb-sm">
+            <h2>Store Summary</h2>
+            <p class="muted">Last 24 Hours</p>
+        </div>
+        <div class="row mb-lg">
+            <div class="col-8 pr-xs">
+                <div class="card shadow mb-sm pad-sm">
+                    <p class="mb-xs">Sales - Last 24 Hours</p>
+                    <canvas id="chartSales" style="width:100%; height:242px;"></canvas>
+                </div>    
+            </div>
+            <div class="col-4 pl-xs">
+                <div class="card shadow">
+                    <div class="flex">
+                        <div class="flex-col pad-sm border">
+                            <p class="">Sales</p>
+                            <h2>$ 5,500</h2>
+                        </div>
+                    </div>    
+                    <div class="flex">
+                        <div class="flex-col pad-sm border">
+                            <p class="">Orders</p>
+                            <h2>750</h2>
+                        </div>
+                        <div class="flex-col pad-sm border">
+                            <p class="">Customers</p>
+                            <h2>1,500</h2>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-middle mb-sm">
+            <h2>New Orders</h2>
+            <button class="flex-pull-right default">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </div>
+        <div class="card shadow mb-lg">
+            <table class="grid iso">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Products</th>
+                        <th>Date</th>
+                        <th class="right">Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</th>
+                        <td><a href="#!">12345</a></th>
+                        <td>John Doe</td>
+                        <td>
+                            <li>Lorem ipsum...</li>
+                            <li>Lorem ipsum...</li>
+                            <li>Lorem ipsum...</li>
+                            <li>Lorem ipsum...</li>
+                        </td>
+                        <td>2020/01/01</td>
+                        <td class="right">$120.50</td>
+                        <td><a href="#!">View Products <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+
+        <div class="flex-middle mb-sm">
+            <h2>New Customers</h2>
+            <button class="flex-pull-right default">View Customers <ion-icon name="arrow-forward-outline"></ion-icon></button>
+        </div>
+        <div class="card shadow mb-lg">
+            <table class="grid iso">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Address 1</th>
+                        <th>Address 2</th>
+                        <th>Zip Code</th>
+                        <th>Joined Date</th>
+                        <th>Last Purchase</th>
+                        <th>Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</th>
+                        <td>Jane Doe</td>
+                        <td>jdoe@email.com</td>
+                        <td>Buffalo</td>
+                        <td>New York</td>
+                        <td>55 A Street Name</td>
+                        <td></td>
+                        <td>43212</td>
+                        <td>2020/01/01</td>
+                        <td>2020/01/21</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                    <tr>
+                        <td>12345</th>
+                        <td>Jane Doe</td>
+                        <td>jdoe@email.com</td>
+                        <td>Buffalo</td>
+                        <td>New York</td>
+                        <td>55 A Street Name</td>
+                        <td></td>
+                        <td>43212</td>
+                        <td>2020/01/01</td>
+                        <td>2020/01/21</td>
+                        <td><a href="#!">View Orders <ion-icon name="arrow-forward-outline"></ion-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+
+
+    </div>
+</content>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+<script>
+var el = document.getElementById("chartSales");
+chartSales = new Chart(el, {
+    type: 'bar',
+    data: {
+        labels: ['00:00:05', '00:00:10', '00:00:15', '00:00:20', '00:00:25', '00:00:30', '00:00:35',
+            '00:00:40', '00:00:45', '00:00:50', '00:00:55', '00:00:60'
+        ],
+        datasets: [{
+            label: 'Success',
+            backgroundColor: '#1E40AF',
+            data: [
+                100, 100, 100, 100, 100, 92, 80, 95, 100, 100, 100, 100
+            ],
+        }]
+    },
+    maintainAspectRatio: false,
+    options: {
+        legend: {
+            display: false,
+            position: 'bottom'
+        },
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+                label: function (t, d) {
+                    var xLabel = d.datasets[t.datasetIndex].label;
+                    var yLabel = t.yLabel;
+                    return xLabel + ': $' + yLabel;
+                }
+            }
+        },
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        scales: {
+            xAxes: [{
+                stacked: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Purchase Time'
+                },
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)"
+                }
+            }],
+            yAxes: [{
+                stacked: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: '$ Sales'
+                },
+                gridLines: {},
+                callback: function (value, index, values) {
+                    return value + '%';
+                }
+            }]
+        }
+    }
+});
+
+var menuBtn = document.querySelector('#menu-btn');
+var menuDropdown = document.querySelector('#menu-overlay');
+var menuDropdownBG = document.querySelector('#menu-overlay-bg');
+menuBtn.addEventListener('click', function(event) {
+    menuDropdown.classList.add("active");
+    menuDropdownBG.classList.add("active");
+});
+menuDropdownBG.addEventListener('click', function(event) {
+    menuDropdown.classList.remove("active");
+    menuDropdownBG.classList.remove("active");
+});
+</script>
+
+</body>
+</html>
