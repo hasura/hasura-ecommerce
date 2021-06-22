@@ -37,9 +37,8 @@ insert_permissions:
     permission:
       columns: ["product_id", "rating", "comment"]
       check:
-        user:
-          id: { "_eq": "X-Hasura-User-Id" }
-          orders: { "products": { "id": { "_ceq": "product_id" } } }
+        product:
+          orders: { "order": { "user_id": { "_eq": "X-Hasura-User-Id" } } }
       set:
         user_id: "X-Hasura-User-Id"
 
@@ -53,9 +52,9 @@ update_permissions:
     permission:
       columns: ["product_id", "rating", "comment"]
       filter:
-        user:
-          id: { "_eq": "X-Hasura-User-Id" }
-          orders: { "products": { "id": { "_ceq": "product_id" } } }
+        user_id: { "_eq": "X-Hasura-User-Id" }
+        product:
+            orders: { "order": { "user_id": { "_eq": "X-Hasura-User-Id" } } }
       set:
         user_id: "X-Hasura-User-Id"
 
@@ -68,6 +67,6 @@ delete_permissions:
   - role: user
     permission:
       filter:
-        user:
-          id: { "_eq": "X-Hasura-User-Id" }
-          orders: { "products": { "id": { "_ceq": "product_id" } } }
+        user_id: { "_eq": "X-Hasura-User-Id" }
+        product:
+          orders: { "order": { "user_id": { "_eq": "X-Hasura-User-Id" } } }
