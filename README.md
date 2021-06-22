@@ -6,13 +6,13 @@ To test this application, see the [Setup](Setup.md) docs.
 - [Hasura E-Commerce Demo](#hasura-e-commerce-demo)
   - [2 Minute Video Demo](#2-minute-video-demo)
   - [<a name='ApplicationTechinicalOverview'></a>Application Techinical Overview](#application-techinical-overview)
-  - [<a name='ApplicationArchitecturalOverview'></a>Application Architectural Overview](#application-architectural-overview)
-    - [<a name='AuthenticationFlow'></a>Authentication Flow](#authentication-flow)
-    - [<a name='CheckoutFlow'></a>Checkout Flow](#checkout-flow)
-    - [<a name='ProductManagementFlow'></a>Product Management Flow](#product-management-flow)
-    - [<a name='GraphQLSDK'></a>GraphQL SDK](#graphql-sdk)
-    - [<a name='HasuraMigrationFlow'></a>Hasura Migration Flow](#hasura-migration-flow)
-    - [<a name='FactorApplications'></a>3 Factor Applications](#3-factor-applications)
+  - [Application Architectural Overview](#application-architectural-overview)
+    - [Authentication Flow](#authentication-flow)
+    - [Checkout Flow](#checkout-flow)
+    - [Product Management Flow](#product-management-flow)
+    - [GraphQL SDK](#graphql-sdk)
+    - [Hasura Migration Flow](#hasura-migration-flow)
+    - [3 Factor Applications](#3-factor-applications)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -43,9 +43,10 @@ This example is a dockerized project with the following services: Postgres, Grap
 
 
 
-## <a name='ApplicationArchitecturalOverview'></a>Application Architectural Overview
+## Application Architectural Overview
 See the [Architecture Documentation.](Architecture.md)
-### <a name='AuthenticationFlow'></a>Authentication Flow
+
+### Authentication Flow
 
 The Authentication leverages Hasura Actions and NextJs serverless routes to handle JWT based authentication. The client sends a login mutation, the mutation is forwarded via action to a serverless function where a unique JWT is created, the token is passed back to Hasura where it is stored with client credentials, and the JWT along with helpful client information is forwarded back to the client and set as a sever-set cookie.
 
@@ -66,7 +67,7 @@ graph TD
     action -.-> website
 ```
 
-### <a name='CheckoutFlow'></a>Checkout Flow
+### Checkout Flow
 
 - User visits the Checkout page, presses payment button
 - GraphQL request is sent to Hasura to invoke custom Hasura Action
@@ -92,16 +93,16 @@ graph TD
 ```
 
 
-### <a name='ProductManagementFlow'></a>Product Management Flow
+### Product Management Flow
 Product management occurs through the `/admin` paths of the client application. New product images are uploaded to the Minio instance and the resource url is saved along with the product details. Again, as a client wrapper to a single GraphQL endpoint, it becomes very easy to expose additional functionality like PIM management without the need for incorporating excessive additional tooling.
 
-### <a name='GraphQLSDK'></a>GraphQL SDK
+### GraphQL SDK
 This project uses an innovative, generated, GraphQl Client SDK. For more information, [see the SDK documentation.](www/utils/FluidGraphQL.md)
 
-### <a name='HasuraMigrationFlow'></a>Hasura Migration Flow
+### Hasura Migration Flow
 Hasura is a powerful backend provider that has offline development primitives baked in. You can define, iterate on, and deploy your migrations through the helpful CLI. For more information see the [migration guide.](hasura/README.md)
 
-### <a name='FactorApplications'></a>3 Factor Applications
+### 3 Factor Applications
 
 This application follows the 3 Factor App principles which are composed of robust client-side state management and a centralized API layer that manages the business logic, architecture and service routing. For more information on 3 factor apps, [visit the website.](https://3factor.app/)
 
