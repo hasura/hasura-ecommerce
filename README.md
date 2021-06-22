@@ -4,6 +4,8 @@ To test this application, see the [Setup](Setup.md) docs.
 <!-- vscode-markdown-toc -->
 
 - [Hasura E-Commerce Demo](#hasura-e-commerce-demo)
+  - [Introduction](#introduction)
+  - [Getting Started](#getting-started)
   - [2 Minute Video Demo](#2-minute-video-demo)
   - [Application Technical Overview](#application-technical-overview)
   - [Application Architectural Overview](#application-architectural-overview)
@@ -23,7 +25,27 @@ To test this application, see the [Setup](Setup.md) docs.
 
 > **Disclaimer/Notice:** This application was a passion project for a number of engineers and other team members internally. Initial developments began long prior to v2.0 releases and before the Metadata V3 spec. As you might assume given the circumstances, there are some irregularitaries in the codebase, and small parts of the UI/design exist solely for aesthetic purposes/inspiration. Our hope was that the "big picture" product here could be useful for others both as a learning exercise or quick reference for particular featuresets. We wish and intend to continue to build out & integrate features of Hasura so that this repo can serve as a cannonical community reference for whatever your implementation/architecture question is about Hasura.
 
+## Introduction
+
 This Hasura e-commerce demo is a full featured reference application demonstrating many of the powerful featues of Hasura's GraphQL Engine. This is free and open software and you are invited to take and use as much of it as you would like, though it was designed for educational purposes.
+
+
+## Getting Started
+
+tl;dr = Clone the repo, run Docker.
+
+```sh-session
+$ git clone https://github.com/hasura/hasura-ecommerce
+<modify ".env.example" to have your real Stripe test keys if you want checkout to work>
+$ docker-compose up -d
+$ cd hasura
+<assuming you have Hasura CLI installed>
+$ hasura seeds apply 
+
+Visit http://localhost:3000 for Next.js frontend
+Visit http://localhost:8060 for Hasura console (admin secret = "my-secret")
+Visit http://localhost:9000 for Minio dashboard (login = "minio:minio123")
+```
 
 
 ## 2 Minute Video Demo
