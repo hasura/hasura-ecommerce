@@ -36,7 +36,8 @@ tl;dr = Clone the repo, run Docker.
 
 ```sh-session
 $ git clone https://github.com/hasura/hasura-ecommerce
-<modify ".env.example" to have your real Stripe test keys if you want checkout to work>
+$ cp .env.example .env
+<modify ".env" to have your real Stripe test keys if you want checkout to work>
 $ docker-compose up -d
 $ cd hasura
 <assuming you have Hasura CLI installed>
