@@ -5,7 +5,7 @@ To test this application, see the [Setup](Setup.md) docs.
 
 - [Hasura E-Commerce Demo](#hasura-e-commerce-demo)
   - [2 Minute Video Demo](#2-minute-video-demo)
-  - [<a name='ApplicationTechinicalOverview'></a>Application Techinical Overview](#application-techinical-overview)
+  - [Application Technical Overview](#application-technical-overview)
   - [Application Architectural Overview](#application-architectural-overview)
     - [Authentication Flow](#authentication-flow)
     - [Checkout Flow](#checkout-flow)
@@ -30,7 +30,7 @@ This Hasura e-commerce demo is a full featured reference application demonstrati
 
 https://user-images.githubusercontent.com/26604994/123009602-ff790180-d38a-11eb-8d7e-a447b55bcb99.mp4
 
-## <a name='ApplicationTechinicalOverview'></a>Application Techinical Overview
+## Application Technical Overview
 This example is a dockerized project with the following services: Postgres, GraphQL Engine, Minio, and Next.js. The project has one external service dependency for payment handling, which we've chosen to implement with Stripe. User authentication and authorization, cart management, order management and product information management is stored in Postgres and architected through Hasura GraphQL Engine. Minio is utilized for asset storage as it implements a common S3 interface.
 
 | Service  | Functionality                                                                | Licensing |
