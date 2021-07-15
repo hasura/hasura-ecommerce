@@ -1,9 +1,9 @@
-# Hasura E-Commerce Demo
+# Hasura Super App
 
 To test this application, see the [Setup](Setup.md) docs.
 <!-- vscode-markdown-toc -->
 
-- [Hasura E-Commerce Demo](#hasura-e-commerce-demo)
+- [Hasura Super App](#hasura-super-app)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
   - [2 Minute Video Demo](#2-minute-video-demo)
@@ -27,7 +27,7 @@ To test this application, see the [Setup](Setup.md) docs.
 
 ## Introduction
 
-This Hasura e-commerce demo is a full featured reference application demonstrating many of the powerful featues of Hasura's GraphQL Engine. This is free and open software and you are invited to take and use as much of it as you would like, though it was designed for educational purposes.
+The Hasura Super App is a full featured reference application demonstrating many of the powerful featues of Hasura's GraphQL Engine. This is free and open software and you are invited to take and use as much of it as you would like, though it was designed for educational purposes.
 
 
 ## Getting Started
