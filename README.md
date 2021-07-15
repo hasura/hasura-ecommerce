@@ -53,8 +53,6 @@ Visit http://localhost:9000 for Minio dashboard (login = "minio:minio123")
 
 https://user-images.githubusercontent.com/26604994/125820319-e52ddfd4-a866-4e0c-b157-9ccb116a6215.mp4
 
-
-
 ## Application Technical Overview
 This example is a dockerized project with the following services: Postgres, GraphQL Engine, Minio, and Next.js. The project has one external service dependency for payment handling, which we've chosen to implement with Stripe. User authentication and authorization, cart management, order management and product information management is stored in Postgres and architected through Hasura GraphQL Engine. Minio is utilized for asset storage as it implements a common S3 interface.
 
@@ -66,10 +64,10 @@ This example is a dockerized project with the following services: Postgres, Grap
 | Minio    | S3-compatible object storage (file and image upload)                         | OSS       |
 | Stripe   | Payment handling                                                             | Freemium  |
 
-
-
 ## Application Architectural Overview
 See the [Architecture Documentation.](Architecture.md)
+
+![hasura-super-app-architecture-diagram](https://user-images.githubusercontent.com/26604994/125821547-6a5d0209-549e-436c-b7e8-9b6e897bdf88.png)
 
 ### Authentication Flow
 
