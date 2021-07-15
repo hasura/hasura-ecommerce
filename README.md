@@ -67,7 +67,7 @@ This example is a dockerized project with the following services: Postgres, Grap
 ## Application Architectural Overview
 See the [Architecture Documentation.](Architecture.md)
 
-![hasura-super-app-architecture-diagram](https://user-images.githubusercontent.com/26604994/125821547-6a5d0209-549e-436c-b7e8-9b6e897bdf88.png)
+![app_architecture_diagram](https://user-images.githubusercontent.com/26604994/125822010-95b16d9a-2c0e-49ce-ad99-f7c6cca6e588.png)
 
 ### Authentication Flow
 
