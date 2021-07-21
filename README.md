@@ -44,6 +44,8 @@ $ cd hasura
 $ hasura seeds apply 
 
 Visit http://localhost:3000 for Next.js frontend
+  Login at /account/login has default credentials "user@site.com:password"
+  Login at /admin/account/login has default credentials "admin@site.com:password"
 Visit http://localhost:8060 for Hasura console (admin secret = "my-secret")
 Visit http://localhost:9000 for Minio dashboard (login = "minio:minio123")
 ```
