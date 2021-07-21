@@ -1,9 +1,9 @@
-# Hasura E-Commerce Demo
+# Hasura Super App
 
 To test this application, see the [Setup](Setup.md) docs.
 <!-- vscode-markdown-toc -->
 
-- [Hasura E-Commerce Demo](#hasura-e-commerce-demo)
+- [Hasura Super App](#hasura-super-app)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
   - [2 Minute Video Demo](#2-minute-video-demo)
@@ -23,11 +23,11 @@ To test this application, see the [Setup](Setup.md) docs.
 <!-- /vscode-markdown-toc -->
 
 
-> **Disclaimer/Notice:** This application was a passion project for a number of engineers and other team members internally. Initial developments began long prior to v2.0 releases and before the Metadata V3 spec. As you might assume given the circumstances, there are some irregularitaries in the codebase, and small parts of the UI/design exist solely for aesthetic purposes/inspiration. Our hope was that the "big picture" product here could be useful for others both as a learning exercise or quick reference for particular featuresets. We wish and intend to continue to build out & integrate features of Hasura so that this repo can serve as a cannonical community reference for whatever your implementation/architecture question is about Hasura.
+> **Disclaimer/Notice:** This application was a passion project for a number of engineers and other team members internally. Initial developments began long prior to v2.0 releases and before the Metadata V3 spec. As you might assume given the circumstances, there are some irregularitaries in the codebase, and small parts of the UI/design exist solely for aesthetic purposes/inspiration. Our hope was that the "big picture" product here could be useful for others both as a learning exercise or quick reference for particular featuresets. We wish and intend to continue to build out & integrate features of Hasura so that this repo can serve as a cannonical community reference for whatever your implementation/architecture question is.
 
 ## Introduction
 
-This Hasura e-commerce demo is a full featured reference application demonstrating many of the powerful featues of Hasura's GraphQL Engine. This is free and open software and you are invited to take and use as much of it as you would like, though it was designed for educational purposes.
+The Hasura Super App is a full featured reference application demonstrating many of the powerful featues of Hasura's GraphQL Engine. This is free and open software and you are invited to take and use as much of it as you would like, though it was designed for educational purposes.
 
 
 ## Getting Started
@@ -53,7 +53,7 @@ Visit http://localhost:9000 for Minio dashboard (login = "minio:minio123")
 
 ## 2 Minute Video Demo
 
-https://user-images.githubusercontent.com/26604994/123009602-ff790180-d38a-11eb-8d7e-a447b55bcb99.mp4
+https://user-images.githubusercontent.com/26604994/125822361-44faf3f2-a8a1-47a3-8ddf-52ccdf801f20.mp4
 
 ## Application Technical Overview
 This example is a dockerized project with the following services: Postgres, GraphQL Engine, Minio, and Next.js. The project has one external service dependency for payment handling, which we've chosen to implement with Stripe. User authentication and authorization, cart management, order management and product information management is stored in Postgres and architected through Hasura GraphQL Engine. Minio is utilized for asset storage as it implements a common S3 interface.
@@ -66,10 +66,10 @@ This example is a dockerized project with the following services: Postgres, Grap
 | Minio    | S3-compatible object storage (file and image upload)                         | OSS       |
 | Stripe   | Payment handling                                                             | Freemium  |
 
-
-
 ## Application Architectural Overview
 See the [Architecture Documentation.](Architecture.md)
+
+![app_architecture_diagram](https://user-images.githubusercontent.com/26604994/125822010-95b16d9a-2c0e-49ce-ad99-f7c6cca6e588.png)
 
 ### Authentication Flow
 
