@@ -38,7 +38,7 @@ The Hasura Super App is a full featured reference application demonstrating many
 
 ## Getting Started
 
-tl;dr = Clone the repo, run Docker.
+Follow the steps below to start the demo locally with Docker.
 
 1. Clone the project:
     ```bash
