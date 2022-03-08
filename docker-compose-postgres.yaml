@@ -13,7 +13,7 @@ services:
       POSTGRES_PASSWORD: postgrespassword
 
   graphql-engine:
-    image: hasura/graphql-engine:v2.0.0-beta.2.cli-migrations-v2
+    image: hasura/graphql-engine:v2.2.2.cli-migrations-v2
     volumes:
       - ./hasura/migrations:/hasura-migrations
       - ./hasura/metadata:/hasura-metadata

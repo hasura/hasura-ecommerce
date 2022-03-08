@@ -17,10 +17,16 @@ To test this application, see the [Setup](Setup.md) docs.
     - [3 Factor Applications](#3-factor-applications)
 
 <!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
+    numbering=false
+    autoSave=true
+    /vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
+
+
+TODO:
+clean restart:
+https://docs.tibco.com/pub/mash-local/4.1.0/doc/html/docker/GUID-BD850566-5B79-4915-987E-430FC38DAAE4.html
+
 
 
 > **Disclaimer/Notice:** This application was a passion project for a number of engineers and other team members internally. Initial developments began long prior to v2.0 releases and before the Metadata V3 spec. As you might assume given the circumstances, there are some irregularitaries in the codebase, and small parts of the UI/design exist solely for aesthetic purposes/inspiration. Our hope was that the "big picture" product here could be useful for others both as a learning exercise or quick reference for particular featuresets. We wish and intend to continue to build out & integrate features of Hasura so that this repo can serve as a cannonical community reference for whatever your implementation/architecture question is.
@@ -34,20 +40,40 @@ The Hasura Super App is a full featured reference application demonstrating many
 
 tl;dr = Clone the repo, run Docker.
 
-```sh-session
-$ git clone https://github.com/hasura/hasura-ecommerce
-$ cp .env.example .env
-<modify ".env" to have your real Stripe test keys if you want checkout to work>
-$ docker-compose up -d
-$ cd hasura
-<assuming you have Hasura CLI installed>
-$ hasura seeds apply 
+1. Clone the project:
+    ```bash
+    git clone https://github.com/dmagda/hasura-ecommerce
+    ```
+2. (Optional) Modify the `.env.example` with your real Stripe test keys if you want checkout to work and then execute this command:
+    ```bash
+    cp .env.example .env
+    ```
+3. Start the demo in Docker using YugabyteDB as a database:
+    ```bash
+    docker-compose -f docker-compose-yugabyte.yaml up
+    ```
 
+    To use Postgres, start with the following config file:
+
+    ```bash
+    docker-compose -f docker-compose-postgres.yaml up
+    ``` 
+4. Load sample data:
+    ```bash
+    cd hasura
+    hasura seeds apply
+    ```
+5. Visit the following endpoints:
+
+
+```sh-session
 Visit http://localhost:3000 for Next.js frontend
   Login at /account/login has default credentials "user@site.com:password"
   Login at /admin/account/login has default credentials "admin@site.com:password"
 Visit http://localhost:8060 for Hasura console (admin secret = "my-secret")
 Visit http://localhost:9000 for Minio dashboard (login = "minio:minio123")
+Visit http://localhost:7001 for Yugabyte Master UI
+Visit http://localhost:9001 for Yugabyte TServer UI
 ```
 
 
@@ -131,3 +157,17 @@ Hasura is a powerful backend provider that has offline development primitives ba
 
 This application follows the 3 Factor App principles which are composed of robust client-side state management and a centralized API layer that manages the business logic, architecture and service routing. For more information on 3 factor apps, [visit the website.](https://3factor.app/)
 
+## Clear Demo Resources
+
+1. Stop the containers:
+    ```bash
+    docker-compose down
+    ```
+2. Delete all containers:
+    ```bash
+    docker rm -f $(docker ps -a -q)
+    ```
+3. Delete all volumes:
+    ```bash
+    docker volume rm $(docker volume ls -q)
+    ```    

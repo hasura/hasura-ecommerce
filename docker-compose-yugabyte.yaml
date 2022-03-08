@@ -1,0 +1,121 @@
+version: "3.6"
+
+services:
+  yb-master:
+      image: yugabytedb/yugabyte:2.12.1.0-b41
+      container_name: yb-master-n1
+      volumes:
+      - yb-master-data-1:/mnt/master
+      command: [ "/home/yugabyte/bin/yb-master",
+                "--fs_data_dirs=/mnt/master",
+                "--webserver_port=7001",
+                "--master_addresses=yb-master-n1:7100",
+                "--rpc_bind_addresses=yb-master-n1:7100",
+                "--replication_factor=1"]
+      ports:
+      - "7001:7001"
+      environment:
+        SERVICE_7001_NAME: yb-master
+
+  yb-tserver:
+      image: yugabytedb/yugabyte:2.12.1.0-b41
+      container_name: yb-tserver-n1
+      volumes:
+      - yb-tserver-data-1:/mnt/tserver
+      command: [ "/home/yugabyte/bin/yb-tserver",
+                "--fs_data_dirs=/mnt/tserver",
+                "--webserver_port=9001",
+                "--start_pgsql_proxy",
+                "--rpc_bind_addresses=yb-tserver-n1:9100",
+                "--tserver_master_addrs=yb-master-n1:7100"]
+      ports:
+      - "5433:5433"
+      - "9001:9001"
+      environment:
+        SERVICE_5433_NAME: ysql
+        SERVICE_9001_NAME: yb-tserver
+      depends_on:
+      - yb-master
+
+  graphql-engine:
+    image: hasura/graphql-engine:v2.2.2.cli-migrations-v2
+    volumes:
+      - ./hasura/migrations:/hasura-migrations
+      - ./hasura/metadata:/hasura-metadata
+    ports:
+      - 8060:8080
+    depends_on:
+      - yb-tserver
+    restart: always
+    environment:
+      NEXTJS_SERVER_URL: http://nextjs:3000
+      HASURA_GRAPHQL_DATABASE_URL: postgresql://yugabyte:yugabyte@yb-tserver:5433/yugabyte
+      ## enable the console served by server
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      HASURA_GRAPHQL_ADMIN_SECRET: my-secret
+      HASURA_GRAPHQL_JWT_SECRET: '{ "type": "HS256", "key": "this-is-a-generic-HS256-secret-key-and-you-should-really-change-it" }'
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+
+  nextjs:
+    build:
+      context: ./www
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./www:/app/
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000
+    environment:
+      NEXT_PUBLIC_HASURA_URL_SERVERSIDE: http://graphql-engine:8080
+      NEXT_PUBLIC_HASURA_URL_CLIENTSIDE: http://localhost:8060
+      HASURA_ADMIN_SECRET: my-secret
+      HASURA_JWT_SECRET_TYPE: HS256
+      HASURA_JWT_SECRET_KEY: this-is-a-generic-HS256-secret-key-and-you-should-really-change-it
+      S3_SERVER_URL: http://minio:9000
+      S3_ACCESS_KEY: minio
+      S3_SECRET_ACCESS_KEY: minio123
+      # Bucket name where all images should be uploaded and stored
+      # [NOTE] The following rules apply for naming S3 buckets:
+      #   Bucket names must be between 3 and 63 characters long.
+      #   Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-).
+      #   Bucket names must begin and end with a letter or number.
+      S3_BUCKET_NAME: site-images
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+
+  # MinIO is an OSS self-hosted S3 compatible object storage platform (See: https://github.com/minio/minio)
+  # It works with all standard S3 client libraries, and comes with an admin GUI to manage the stored files
+  #
+  # You can access the admin panel at http://localhost:9000/minio/login after starting the service
+  #
+  # (The "Access Key" is MINIO_ROOT_USER, and "Secret Key" is MINIO_ROOT_PASSWORD)
+  # (So you can login with "minio:minio123" as credentials)
+  #
+  # It is used to generate presigned image upload/download urls for the frontend (this is done via Hasura Action REST API handlers in Next.js)
+  minio:
+    image: minio/minio:RELEASE.2021-06-17T00-10-46Z
+    volumes:
+      - minio_data:/data
+    ports:
+      - 9000:9000
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  minio_data:
+  hasura_ci_db_data:
+  yb-master-data-1:
+  yb-tserver-data-1:
