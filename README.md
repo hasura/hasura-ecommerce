@@ -48,13 +48,19 @@ Follow the steps below to start the demo locally with Docker.
     ```bash
     cp .env.example .env
     ```
-3. Start the demo in Docker using YugabyteDB as a database:
+3. Start the demo in Docker:
+
+    Cloud, Hasura Cloud and Yugabyte Cloud:
+    ```bash
+    docker-compose -f docker-compose-cloud.yaml up
+    ```
+
+    On-prem, YugabyteDB:
     ```bash
     docker-compose -f docker-compose-yugabyte.yaml up
     ```
 
-    To use Postgres, start with the following config file:
-
+    On-prem, PostgreSQL:
     ```bash
     docker-compose -f docker-compose-postgres.yaml up
     ``` 
@@ -160,9 +166,22 @@ This application follows the 3 Factor App principles which are composed of robus
 ## Clear Demo Resources
 
 1. Stop the containers:
+    
+    Cloud, Hasura Cloud and Yugabyte Cloud:
     ```bash
-    docker-compose down
+    docker-compose -f docker-compose-cloud.yaml down
     ```
+
+    On-prem, YugabyteDB:
+    ```bash
+    docker-compose -f docker-compose-yugabyte.yaml down
+    ```
+
+    On-prem, PostgreSQL:
+    ```bash
+    docker-compose -f docker-compose-postgres.yaml down
+    ``` 
+
 2. Delete all containers:
     ```bash
     docker rm -f $(docker ps -a -q)

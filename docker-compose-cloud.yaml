@@ -1,0 +1,66 @@
+version: "3.6"
+
+services:
+  nextjs:
+    build:
+      context: ./www
+      dockerfile: Dockerfile
+    restart: always
+    image: nextjs-cloud-image
+    container_name: nextjs-cloud
+    volumes:
+      - ./www:/app/
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000
+    environment:
+      NEXT_PUBLIC_HASURA_URL_SERVERSIDE: https://native-ladybug-39.hasura.app/
+      NEXT_PUBLIC_HASURA_URL_CLIENTSIDE: https://native-ladybug-39.hasura.app/
+      HASURA_ADMIN_SECRET: Ee7ZjxrImmGIuu60sv8ieDbf6iYFAKKtAVV2WTjFfeKGXawUVVjTb1hfXgE2Egfg
+      HASURA_JWT_SECRET_TYPE: HS256
+      HASURA_JWT_SECRET_KEY: this-is-a-generic-HS256-secret-key-and-you-should-really-change-it
+      S3_SERVER_URL: http://minio:9000
+      S3_ACCESS_KEY: minio
+      S3_SECRET_ACCESS_KEY: minio123
+      # Bucket name where all images should be uploaded and stored
+      # [NOTE] The following rules apply for naming S3 buckets:
+      #   Bucket names must be between 3 and 63 characters long.
+      #   Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-).
+      #   Bucket names must begin and end with a letter or number.
+      S3_BUCKET_NAME: site-images
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+
+  # MinIO is an OSS self-hosted S3 compatible object storage platform (See: https://github.com/minio/minio)
+  # It works with all standard S3 client libraries, and comes with an admin GUI to manage the stored files
+  #
+  # You can access the admin panel at http://localhost:9000/minio/login after starting the service
+  #
+  # (The "Access Key" is MINIO_ROOT_USER, and "Secret Key" is MINIO_ROOT_PASSWORD)
+  # (So you can login with "minio:minio123" as credentials)
+  #
+  # It is used to generate presigned image upload/download urls for the frontend (this is done via Hasura Action REST API handlers in Next.js)
+  minio:
+    image: minio/minio:RELEASE.2021-06-17T00-10-46Z
+    container_name: minio-cloud
+    volumes:
+      - minio_data:/data
+    ports:
+      - 9000:9000
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  minio_data:
+  hasura_ci_db_data:
+  yb-master-data-1:
+  yb-tserver-data-1:
