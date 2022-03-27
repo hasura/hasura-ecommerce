@@ -1,89 +1,81 @@
 type Query {
-  adminLogin (
+  adminLogin(
     params: AdminLoginInput!
   ): JWT
 }
 
-
 type Mutation {
-  adminSignup (
+  adminSignup(
     params: AdminSignupInput!
   ): JWT
 }
 
-
 type Mutation {
-  createPaymentIntent (
+  createPaymentIntent(
     params: CreatePaymentIntentInput!
   ): PaymentIntentClientSecret
 }
 
-
 type Mutation {
-  login (
+  login(
     params: LoginInput!
   ): JWT
 }
 
-
 type Query {
-  refreshToken (
+  refreshToken(
     params: RefreshTokenInput!
   ): RefreshTokenJWT
 }
 
-
 type Mutation {
-  signup (
+  signup(
     params: SignupInput!
   ): JWT
 }
 
-
-
-
 input SignupInput {
-  name : String!
-  email : String!
-  password : String!
+  name: String!
+  email: String!
+  password: String!
 }
 
 input LoginInput {
-  email : String!
-  password : String!
+  email: String!
+  password: String!
 }
 
 input AdminLoginInput {
-  email : String!
-  password : String!
+  email: String!
+  password: String!
 }
 
 input AdminSignupInput {
-  name : String!
-  email : String!
-  password : String!
+  name: String!
+  email: String!
+  password: String!
 }
 
 input CreatePaymentIntentInput {
-  paymentAmount : Float!
+  paymentAmount: Float!
 }
 
 input RefreshTokenInput {
-  refreshToken : String!
+  refreshToken: String!
 }
 
 type PaymentIntentClientSecret {
-  clientSecret : String!
+  clientSecret: String!
 }
 
 type JWT {
-  name : String!
-  email : String!
-  token : String!
-  refreshToken : String!
+  name: String!
+  email: String!
+  token: String!
+  refreshToken: String!
 }
 
 type RefreshTokenJWT {
-  token : String!
+  token: String!
 }
 

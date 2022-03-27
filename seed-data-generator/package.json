@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node ./src/main.ts",
-    "generate-gql-client": "zeus http://localhost:8060/v1/graphql  ./src --ts --node --header 'X-Hasura-Admin-Secret:my-secret' --output graphql-client-sdk-node"
+    "generate-gql-client": "zeus http://localhost:8080/v1/graphql  ./src --ts --node --header 'X-Hasura-Admin-Secret:my-secret' --output graphql-client-sdk-node"
   },
   "dependencies": {
     "faker": "^5.4.0",

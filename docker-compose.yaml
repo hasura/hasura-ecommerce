@@ -13,18 +13,19 @@ services:
       POSTGRES_PASSWORD: postgrespassword
 
   graphql-engine:
-    image: hasura/graphql-engine:v2.0.0-beta.2.cli-migrations-v2
+    image: hasura/graphql-engine:v2.3.1.cli-migrations-v3
     volumes:
       - ./hasura/migrations:/hasura-migrations
       - ./hasura/metadata:/hasura-metadata
     ports:
-      - 8060:8080
+      - 8080:8080
     depends_on:
       - "postgres"
     restart: always
     environment:
       NEXTJS_SERVER_URL: http://nextjs:3000
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+      PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       ## enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
       ## enable debugging mode. It is recommended to disable this in production
@@ -47,7 +48,7 @@ services:
       - 3000:3000
     environment:
       NEXT_PUBLIC_HASURA_URL_SERVERSIDE: http://graphql-engine:8080
-      NEXT_PUBLIC_HASURA_URL_CLIENTSIDE: http://localhost:8060
+      NEXT_PUBLIC_HASURA_URL_CLIENTSIDE: http://localhost:8080
       HASURA_ADMIN_SECRET: my-secret
       HASURA_JWT_SECRET_TYPE: HS256
       HASURA_JWT_SECRET_KEY: this-is-a-generic-HS256-secret-key-and-you-should-really-change-it

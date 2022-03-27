@@ -1,8 +1,0 @@
-{
-  "type": "run_sql",
-  "args": {
-    "sql": "DROP SCHEMA public CASCADE; CREATE SCHEMA public;",
-    "cascade": true,
-    "check_metadata_consistency": false
-  }
-}
