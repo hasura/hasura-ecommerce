@@ -1,4 +1,4 @@
-POST http://localhost:8060/v1/graphql HTTP/1.1
+POST http://localhost:8080/v1/graphql HTTP/1.1
 X-Request-Type: GraphQL
 Content-Type: application/json
 

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "@comment generate-gql-client": "Generates a Typescript SDK containing the schema types, and a typed query client which can automatically infer return types from the selected fields",
-    "generate-gql-client": "zeus http://localhost:8060/v1/graphql ./utils/generated --ts --header 'X-Hasura-Admin-Secret:my-secret' --output graphql-client-sdk"
+    "generate-gql-client": "npx zeus http://localhost:8080/v1/graphql ./utils/generated --ts --header 'X-Hasura-Admin-Secret:my-secret' --output graphql-client-sdk"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",

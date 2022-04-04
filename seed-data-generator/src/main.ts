@@ -14,7 +14,7 @@ const NUM_ORDERS_PER_USER = 5;
 const NUM_PRODUCTS_PER_ORDER_MIN = 1;
 const NUM_PRODUCTS_PER_ORDER_MAX = 5;
 
-const client = Chain("http://localhost:8060/v1/graphql", {
+const client = Chain("http://localhost:8080/v1/graphql", {
   headers: { "X-Hasura-Admin-Secret": "my-secret" },
 });
 
